@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Система управления заказами - ПАО "Акрон"</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-layout">
+
+  <!-- ВЕРХНЕЕ МЕНЮ -->
+  <div class="menu-bar">
+    <span>Файл</span><span>Вид</span><span>Избранное</span><span>Справочники</span>
+    <span>Документы</span><span>Интерфейсы</span><span>Отчеты</span>
+    <span>Настройки</span><span>Сервисы</span><span>Окно</span><span>Помощь</span>
+  </div>
+
+  <!-- ПАНЕЛЬ ИНСТРУМЕНТОВ -->
+  <div class="toolbar">
+    <button class="toolbar-btn" title="Создать"></button>
+    <button class="toolbar-btn" title="Открыть">📂</button>
+    <button class="toolbar-btn" title="Сохранить">💾</button>
+    <button class="toolbar-btn" title="Удалить">🗑</button>
+    <button class="toolbar-btn" title="Печать">🖨</button>
+    <div class="toolbar-sep"></div>
+    <button class="toolbar-btn" title="Копировать">📋</button>
+    <button class="toolbar-btn" title="Вставить">📌</button>
+    <div class="toolbar-sep"></div>
+    <button class="toolbar-btn" title="Обновить"></button>
+    <button class="toolbar-btn" title="Найти">🔍</button>
+    <button class="toolbar-btn" title="Фильтр">🔽</button>
+    <div class="toolbar-sep"></div>
+    <button class="toolbar-btn" title="Настройки"></button>
+    <button class="toolbar-btn" title="Справка">❓</button>
+  </div>
+
+  <!-- ПАНЕЛЬ ФИЛЬТРОВ -->
+  <div class="filter-bar">
+    <label>Филиал</label>
+    <select><option>ПАО "Акрон"</option></select>
+    <label>Дата</label>
+    <input type="date">
+    <label>Период с</label>
+    <input type="date">
+    <label>по</label>
+    <input type="date">
+    <label>Номер заказа</label>
+    <input type="text" style="width:100px">
+    <label>Обозначение</label>
+    <input type="text" style="width:120px">
+    <label>Наименование</label>
+    <input type="text" style="width:150px">
+    <label>Период с</label>
+    <input type="date">
+    <label>по</label>
+    <input type="date">
+    <label>Состояние</label>
+    <select style="width:130px"><option></option></select>
+    <label class="checkbox-label"><input type="checkbox"> Показать открытые</label>
+  </div>
+
+  <!-- ВЕРХНЯЯ ТАБЛИЦА -->
+  <div class="table-container" style="max-height:200px;">
+    <table id="ordersTable">
+      <thead>
+        <tr>
+          <th>Месяц <span class="sort-arrow">▼</span></th>
+          <th>Год <span class="sort-arrow">▼</span></th>
+          <th>Наименование <span class="sort-arrow">▲</span></th>
+          <th>Состояние <span class="sort-arrow">▼</span></th>
+          <th>Приоритет <span class="sort-arrow">▼</span></th>
+          <th>Количество <span class="sort-arrow">▼</span></th>
+          <th style="width:30px">Скрыт</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Март</td><td>2023</td><td>Увеличение мощности производства нитроаммофоски до 2700 т</td><td>Формируется</td><td>6</td><td>72</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Июль</td><td>2025</td><td>Фильтр FD-19. Перечень для расчётов</td><td>Формируется</td><td></td><td>28</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Январь</td><td>2026</td><td>дрон</td><td>Формируется</td><td>9</td><td>22</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Март</td><td>2026</td><td>заказы запущенные в 2024г.</td><td>Формируется</td><td></td><td>93</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Январь</td><td>2026</td><td>заказы ремонта и рубки ВЫПОЛНЕННЫЕ 2026</td><td>Формируется</td><td></td><td>224</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Август</td><td>2025</td><td>запросы цехов и производств</td><td>Формируется</td><td>98</td><td>50</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Ноябрь</td><td>2024</td><td>компрессия CO2 диоксида углерода</td><td>Формируется</td><td>93</td><td>32</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Сентябрь</td><td>2026</td><td>на контроль 01.09.2026</td><td>Формируется</td><td>98.7</td><td>42</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Июль</td><td>2026</td><td>номенклатурный план июля 2026</td><td>Формируется</td><td>99</td><td>156</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Ноябрь</td><td>2025</td><td>невыполненные заказы с номенклатуры за 2026</td><td>Формируется</td><td>98.3</td><td>91</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Апрель</td><td>2026</td><td>номенклатурный план Апреля 2026</td><td>Формируется</td><td>99.3</td><td>128</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Июнь</td><td>2026</td><td>номенклатурный план июня 2026</td><td>Формируется</td><td>99.1</td><td>152</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Август</td><td>2026</td><td>номенклатурный план октября 2026</td><td>Формируется</td><td>9</td><td>1</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Август</td><td>2026</td><td>номенклатурный план сентября 2026</td><td>Формируется</td><td>99</td><td>124</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Февраль</td><td>2026</td><td>номенклатурный план февраля 2026</td><td>Формируется</td><td>99.5</td><td>134</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr class="selected"><td>Август</td><td>2026</td><td>обвязка компрессора ам 2</td><td>Формируется</td><td>9</td><td>79</td><td class="checkbox-cell"><input type="checkbox" checked></td></tr>
+        <tr><td>Январь</td><td>2025</td><td>образцы и РТИ</td><td>Формируется</td><td>98.1</td><td>119</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Декабрь</td><td>2024</td><td>перспективный план 2025</td><td>Формируется</td><td>91</td><td>76</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Август</td><td>2026</td><td>срочные ВЫПОЛНЕННЫЕ за Август 2026</td><td>Формируется</td><td></td><td>320</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Сентябрь</td><td>2026</td><td>срочные ВЫПОЛНЕННЫЕ за Сентябрь 2026</td><td>Формируется</td><td></td><td>491</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+        <tr><td>Май</td><td>2026</td><td>срочные ВЫПОЛНЕННЫЕ за май 2026</td><td>Формируется</td><td></td><td>258</td><td class="checkbox-cell"><input type="checkbox"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ВКЛАДКИ -->
+  <div class="tabs">
+    <div class="tab active" data-tab="1">1. Позиции перечня</div>
+    <div class="tab" data-tab="2">2. Состав перечня</div>
+    <div class="tab" data-tab="3">3. Загрузка РЦ</div>
+    <div class="tab" data-tab="4">4. Материалы</div>
+    <div class="tab" data-tab="5">5. Материалы для закупки</div>
+    <div class="tab" data-tab="6">6. Подписи документа</div>
+    <div class="tab" data-tab="7">7. Права</div>
+    <div class="tab" data-tab="8">8. Связанные документы</div>
+  </div>
+  <div id="tab-1" class="tab-content active">
+
+  <!-- НИЖНЯЯ ТАБЛИЦА -->
+  <div class="table-container" style="max-height:220px;">
+    <table id="itemsTable">
+      <thead>
+        <tr>
+          <th style="width:30px">№</th>
+          <th>Наименование <span class="sort-arrow">▼</span></th>
+          <th>Количество <span class="sort-arrow">▼</span></th>
+          <th>Вид <span class="sort-arrow">▼</span></th>
+          <th>Процент выполнения <span class="sort-arrow">▼</span></th>
+          <th>Срок выполнения <span class="sort-arrow">▼</span></th>
+          <th>Дата запуска <span class="sort-arrow">▼</span></th>
+          <th>Дата получения заготовки <span class="sort-arrow">▼</span></th>
+          <th>Просрочен на <span class="sort-arrow">▼</span></th>
+          <th>До срока <span class="sort-arrow">▼</span></th>
+          <th>Фактическая трудоемк... <span class="sort-arrow">▼</span></th>
+          <th>Плановая трудоемк... <span class="sort-arrow">▼</span></th>
+          <th>Счет <span class="sort-arrow">▼</span></th>
+          <th>Статус</th>
+          <th>Статус <span class="sort-arrow">▼</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-green">
+          <td>902-1004</td><td>Прокладка</td><td>2</td><td>Плановый</td><td>100</td><td>11.09.2026</td><td>23.09.2026</td><td>14.09.2026</td><td></td><td>13</td><td>80,61</td><td>80,61 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td>F</td>
+        </tr>
+        <tr class="highlight-green">
+          <td>902-1005</td><td>Гайка М48</td><td>48</td><td>Плановый</td><td>100</td><td>11.09.2026</td><td>10.08.2026</td><td>12.08.2026</td><td></td><td></td><td>153,6</td><td>153,6 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td>F</td>
+        </tr>
+        <tr class="highlight-green">
+          <td>902-1005</td><td>Шпилька М48</td><td>24</td><td>Плановый</td><td>100</td><td>11.09.2026</td><td>10.08.2026</td><td>13.08.2026</td><td></td><td></td><td>49,969</td><td>49,969 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td>F</td>
+        </tr>
+        <tr>
+          <td>902-159#3</td><td>Узел подключения</td><td>1</td><td>Плановый</td><td>94,7</td><td>01.09.2026</td><td>08.07.2026</td><td>12.02.2026</td><td>45</td><td></td><td>300,432</td><td>317,232 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td></td>
+        </tr>
+        <tr>
+          <td>902-159#4</td><td>Узел подключения к шту...</td><td>1</td><td>Плановый</td><td>90,1</td><td>01.09.2026</td><td>04.02.2026</td><td>15.03.2026</td><td>45</td><td></td><td>163,62</td><td>181,6 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td></td>
+        </tr>
+        <tr>
+          <td>902-161#3</td><td>Фильтр</td><td>1</td><td>Плановый</td><td>99,8</td><td>31.05.2026</td><td>17.12.2025</td><td>12.05.2026</td><td>138</td><td></td><td>1215,54</td><td>1217,94 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td></td>
+        </tr>
+        <tr class="highlight-green">
+          <td>902-342#2</td><td>Опора ограничивающая</td><td>1</td><td>Плановый</td><td>100</td><td>20.09.2026</td><td>01.12.2025</td><td>12.03.2026</td><td></td><td></td><td>15,86</td><td>15,86 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td>F</td>
+        </tr>
+        <tr>
+          <td>902-342#3</td><td>Опора хомутовая двухо...</td><td>1</td><td>Плановый</td><td>88,27</td><td>10.10.2026</td><td>02.10.2026</td><td>09.10.2026</td><td>6</td><td></td><td>103,809</td><td>117,609 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td></td>
+        </tr>
+        <tr>
+          <td>902-342#4</td><td>Подвеска пружинная SP-...</td><td>1</td><td>Плановый</td><td>80,89</td><td>20.10.2026</td><td>02.10.2026</td><td>12.10.2026</td><td></td><td>5</td><td>171,47</td><td>211,97 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td></td>
+        </tr>
+        <tr>
+          <td>902-342#6</td><td>Подвеска</td><td>1</td><td>Плановый</td><td>60,05</td><td>15.10.2026</td><td>05.10.2026</td><td>08.10.2026</td><td></td><td>1</td><td>44,19</td><td>73,59 изв</td><td></td>
+          <td><div class="status-badges"><span class="status-badge status-n">Н</span><span class="status-badge status-i">И</span><span class="status-badge status-k">К</span><span class="status-badge status-f">Ф</span><span class="status-badge status-r">Р</span></div></td><td>F</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- НИЖНИЕ ВКЛАДКИ -->
+  <div class="tabs">
+    <div class="tab active" data-btab="1">Дополнительно</div>
+    <div class="tab" data-btab="2">Нормы времени</div>
+    <div class="tab" data-btab="3">Материалы</div>
+    <div class="tab" data-btab="4">Дефицит</div>
+    <div class="tab" data-btab="5">Использование в перечнях</div>
+  </div>
+
+  <!-- НИЖНЯЯ ФОРМА -->
+  <div class="bottom-panel">
+    <div class="form-row">
+      <label>Обозначение</label>
+      <input type="text" value="ЭС-2026.07.23.00.003" style="flex:1.5">
+      <label>Заказчик</label>
+      <input type="text" value="Увеличение мощности аммиака-2 до 2300 т/сутки" style="flex:2">
+      <label>Представитель заказчика</label>
+      <input type="text" style="flex:1">
+      <label>Телефон</label>
+      <input type="text" value="78-18" style="width:80px">
+    </div>
+    <div class="form-row">
+      <label style="min-width:120px; align-self:flex-start; margin-top:4px">Описание работы</label>
+      <textarea style="flex:2; min-height:50px">Изготовить: Прокладка. Прокладка у фланцев пара 100 147х Химмонтаж; Заказчик: Колесников Д.А. Тел. 78-18</textarea>
+      <label style="min-width:80px; align-self:flex-start; margin-top:4px">Расходовка</label>
+      <input type="text" value="-12-04-08-16-04" style="flex:1">
+      <label style="min-width:100px; align-self:flex-start; margin-top:4px">Примечание (заказ)</label>
+      <input type="text" value="А-35521-OPER-3423 (поковка ф350х2000-0,05 шт.)" style="flex:1.5">
+    </div>
+    <div class="form-row">
+      <label>Мероприятие развития</label>
+      <input type="text" style="flex:1">
+      <label>Ответственный</label>
+      <input type="text" value="Гоназов А.Ю." style="flex:1">
+      <label>Дата регистрации</label>
+      <input type="text" value="27.07.2026" style="width:100px">
+      <label>Дата выдачи заказчику</label>
+      <input type="text" style="width:100px">
+      <label>Дата выполнения</label>
+      <input type="text" value="23.09.2026" style="width:100px">
+      <label class="checkbox-label"><input type="checkbox" checked> ВСИ</label>
+    </div>
+    <div class="form-row">
+      <label>Комментарий</label>
+      <input type="text" style="flex:3">
+    </div>
+  </div>
+</div>
+  <div id="tab-2" class="tab-content"></div>
+  <div id="tab-3" class="tab-content"></div>
+  <div id="tab-4" class="tab-content"></div>
+  <div id="tab-5" class="tab-content"></div>
+  <div id="tab-6" class="tab-content"></div>
+  <div id="tab-7" class="tab-content"></div>
+  <div id="tab-8" class="tab-content"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
